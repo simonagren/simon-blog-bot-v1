@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appId": {
+            "value": "198eb0c2-33e1-4808-a7b4-d326043e839b"
+        },
+        "appSecret": {
+            "reference": {
+                "keyVault": {
+                  "id": "/subscriptions/4866dad4-d39c-4a12-9466-de00b6a66718/resourceGroups/RGSimonBot/providers/Microsoft.KeyVault/vaults/VaultSimonBot"
+                },
+                "secretName": "SecretSimonBot"
+              }
+        },
+        "botId": {
+            "value": "BotSimonBot"
+        },
+        "botSku": {
+            "value": "F0"
+        },
+        "newAppServicePlanName": {
+            "value": "SPSimonBot"
+        },
+        "newAppServicePlanSku": {
+            "value": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            }
+        },
+        "appServicePlanLocation": {
+            "value": "northeurope"
+        },
+        "existingAppServicePlan": {
+            "value": ""
+        },
+        "newWebAppName": {
+            "value": "WASimonBot"
+        }
+    }
+}
